@@ -1,0 +1,77 @@
+
+
+.modal-body form{
+  padding:20px;
+  width:700px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+.modal-body form .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
+
+.modal-body form .row .col{
+  flex:1 1 250px;
+}
+
+.modal-body form .row .col .title{
+  font-size: 20px;
+  color:#333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.modal-body form .row .col .inputBox{
+  margin:15px 0;
+}
+
+.modal-body form .row .col .inputBox span{
+  margin-bottom: 10px;
+  display: block;
+}
+
+.modal-body form .row .col .inputBox input{
+  width:100%;
+  border:1px solid #d9f8cd;
+  border-radius: 5%;
+  padding:10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.modal-body form .row .col .inputBox input:focus{
+  border:1px solid #000;
+}
+
+.modal-body form .row .col .flex{
+  display: flex;
+  gap:15px;
+}
+
+.modal-body form .row .col .flex .inputBox{
+  margin-top: 5px;
+}
+
+.modal-body form .row .col .inputBox img{
+  height: 25px;
+  margin-top: 0px;
+  border-radius: 10%;
+  filter: drop-shadow(0 0 1px #b9b9b9);
+}
+
+.modal-body form .submit-btn{
+  width: 100%;
+  padding:12px;
+  font-size: 17px;
+  background: #27ae60;
+  color:#fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.modal-body form .submit-btn:hover{
+  background: #2ecc71;
+}

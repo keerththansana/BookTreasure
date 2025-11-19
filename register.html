@@ -1,0 +1,161 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookTreasury | Reg</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://collegebookstore.in/wp-content/uploads/2021/02/online-book-shopping-sites-in-india.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    position: relative;
+    padding-top: 8px;
+    max-width: 430px;
+    height: 550px;
+    width: 100%;
+    background: #c788b2;
+    opacity: 90%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .content{
+    align-items: center;
+    height: 500px;
+    width: 200%;
+    transition: height 0.2s ease;
+}
+.container .form{
+    width: 50%;
+    padding: 30px 30px;
+    background-color: #f3e4ed;
+    transition: margin-left 0.18s ease;
+}
+.container .content .title{
+    font-size: 27px;
+    text-align: center;
+    padding: 10px 5px 0 5px;
+}
+.form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 0 12px 0;
+}
+.form .input-box{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+}
+.form .input-box span.details{
+    margin-bottom: 5px;
+}
+.input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+    border-color: #eb74b5;
+}
+.form .button{
+    height: 45px;
+    margin: 35px 0
+ }
+.form .button input{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    color: #0a0a0a;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg,  #ffffff, #e267ab);
+ }
+.form .button input:hover{
+   background: linear-gradient(-135deg,  #ffffff, #e267ab);
+}
+
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+</style>    
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="form register">
+            <span class="title">Welcome to BookTreasury</span>
+              <form action="register.php" method="POST">
+                    <div class="user-details">
+                      <div class="input-box">
+                        <span class="details">Name</span>
+                        <input type="text" name="name" placeholder="Enter your name" required>
+                      </div>
+                      <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="email" name="Email" placeholder="Enter your email" required>
+                      </div>
+                      <div class="input-box">
+                        <span class="details">Mobile Number</span>
+                        <input type="text" name="Pnumber" placeholder="Enter your mobile" required>
+                      </div>
+                      <div class="input-box">
+                        <span class="details">Password</span>
+                        <input type="password" name="pword" placeholder="Enter your password" required>
+                      </div>
+                    </div>
+                    <div class="button">
+                      <input type="submit" value="SignUp">
+                    </div>
+              </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

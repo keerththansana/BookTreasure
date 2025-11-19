@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Book Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/login.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+  
+    .slide-section {
+      margin-top: 6rem;
+
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-link {
+      color: grey;
+      font-weight: 600;
+      position: relative;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- navbar section -->
+  <nav class="navbar navbar-expand-lg fixed-top p-3  border-bottom border-dark border-3 border-opacity-25"
+    style="background-color: white;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="image/book1.png" width="50"  alt="Online Bookstore Logo" class="img-fluid">
+        Book Treasury
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2 active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="#aboutUs">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="#books">Books</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="#footer">Contact Us</a>
+          </li>
+        </ul>
+        <div class="d-flex justify-content-between">
+          <button class="btn position-relative" data-bs-toggle="modal" data-bs-target="#loginModal" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-person"
+              viewBox="0 0 16 16">
+              <path
+                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+            </svg>
+          </button>
+          <button class="btn position-relative" data-bs-toggle="offcanvas" href="#cartOffcanvas" type="button"
+            aria-controls="cartOffcanvas">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-bag"
+              viewBox="0 0 16 16">
+              <path
+                d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+            </svg>
+            <span id="floatBtnBadge"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              0
+            </span>
+          </button>
+          <button class="btn position-relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-heart"
+              viewBox="0 0 16 16">
+              <path
+                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- slider section -->
+  <section class="container slide-section p-5 rounded"
+    style="background-color: white;box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+    <div id="carouselExampleCaptions" class="carousel slide rounded bg-dark text-dark bg-opacity-25"
+      data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active text-center" data-bs-interval="5000">
+          <center><img src="image/cover1.jpg" class="d-block " alt="..."></center>
+          <div class="carousel-caption d-none d-md-block bg-dark text-white bg-opacity-50 rounded">
+            <h1>First slide label</h1>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <center><img src="image/cover2.jpg" class="d-block " alt="..."></center>
+          <div class="carousel-caption d-none d-md-block bg-dark text-white bg-opacity-50 rounded">
+            <h1>Second slide label</h1>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <center><img src="image/cover3.jpg" class="d-block " alt="..."></center>
+          <div class="carousel-caption d-none d-md-block bg-dark text-white bg-opacity-50 rounded">
+            <h1>Third slide label</h1>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- about us section-->
+  <section id="aboutUs" class="container mt-5 p-5 rounded"
+    style="background-color: white;box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+
+    <p id="aboutUsHeader" class="fs-1 fw-bolder  text-center">About Us</p>
+    <p class="text-center">
+      Welcome to Onlinebookstore, your online destination for all things books! Discover a handpicked selection of
+      captivating reads across genres. From bestselling thrillers to heartwarming romances, we've got something for
+      every reader. Explore our user-friendly website for exclusive deals and join our vibrant community of book
+      lovers.
+      Welcome to your new literary adventure at Onlinebookstore.
+    </p>
+    <p class="text-center">
+      Discover your next favorite read at Onlinebookstore! Shop our diverse collection of books online and enjoy
+      seamless browsing and convenient delivery. Your literary journey starts here at Onlinebookstore.
+    </p><br>
+    <div class="container text-center">
+      <div class="row  g-3 justify-content-around">
+        <div class="d-none d-md-block col-md-2 border border-dark rounded p-4">
+          <h4>Search</h4>
+          <img width="100" height="100" src="https://img.icons8.com/ios/100/search--v1.png" alt="search--v1"/>
+        </div>
+        <div class="d-none d-md-block col-md-2 border border-dark rounded p-4">
+          <h4>Select</h4>
+          <img width="100" height="100" src="https://img.icons8.com/ios/100/checked-checkbox--v1.png" alt="checked-checkbox--v1"/>
+        </div>
+        <div class="d-none d-md-block col-md-2 border border-dark rounded p-4">
+          <h4>Pay</h4>
+          <img width="100" height="100" src="https://img.icons8.com/dotty/100/card-in-use.png" alt="card-in-use"/>
+        </div>
+        <div class="d-none d-md-block col-md-2 border border-dark rounded p-4">
+          <h4>Deliver</h4>
+          <img width="100" height="100" src="https://img.icons8.com/ios/100/shipped.png" alt="shipped"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- books loading section -->
+  <section id="books" class="container position-relative mt-5 pt-5 rounded"
+    style="background-color: white;box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+    <p class="fs-1 fw-bolder  text-center">Books</p><br>
+    <div class="row g-3 align-items-center">
+      <p class="fs-5  text-center">Search Books</p><br>
+      <div class="col-12 col-md-3 mb-3">
+        <input id="txtSearchBook" type="text" class="form-control" placeholder="enter book name or author"
+          aria-label="enter book name" aria-describedby="btnSearchBook">
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <select onchange="filterBook()" class="form-select" id="bookTypeFilter">
+          <option selected disabled> select type</option>
+          <option>Novel</option>
+          <option>Fiction</option>
+          <option>History</option>
+        </select>
+      </div>
+      <div class="mb-3 col-12 col-md-3">
+        <button class="btn btn-secondary" type="button" id="btnClearFilter" onclick="clearFilters()">Clear
+          Filters</button>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col vh-100 overflow-y-scroll mt-4 mb-4">
+        <div class="row" id="bookCardsContainer">
+          <!-- books are load in here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q and A section -->
+  <section id="qAnda" class="position-relative container text-center container p-5 rounded mt-5 mb-5"
+    style="background-color: white;box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+    <p class="fs-1 fw-bolder  text-center">Frequently Asked Questions</p><br>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed btn-light" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            How to order books from this site?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum corporis ipsam incidunt possimus repudiandae
+              delectus sunt voluptate, dolores dolore molestias nobis. Dignissimos impedit, molestiae autem
+              reprehenderit vitae mollitia velit maiores.</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed btn-light" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Do I need an account to purchase books?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum corporis ipsam incidunt possimus repudiandae
+              delectus sunt voluptate, dolores dolore molestias nobis. Dignissimos impedit, molestiae autem
+              reprehenderit vitae mollitia velit maiores.</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button btn-light collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            How to know my order is success?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quia voluptates illum voluptatum maxime
+              odit velit distinctio architecto dolores, aspernatur nihil dicta nostrum at quaerat provident illo
+              officiis fuga inventore.</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button btn-light collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Do you deliver the package to the address?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique expedita accusantium iste delectus
+              recusandae sequi asperiores neque totam quis maiores autem nostrum alias dolores sapiente quasi
+              praesentium, aliquid nemo veritatis?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="border rounded-lg overflow-hidden">
+      <div class="border-b">
+        <button class="w-full text-left p-4 bg-zinc-100 white:bg-zinc-800 flex justify-between items-center"
+          onclick="toggleAnswer('answer1')">
+          <span>How to order books?</span>
+          <span id="icon1">−</span>
+        </button>
+        <div id="answer1" class="p-4 bg-white dark:bg-zinc-900 text-left">
+          <ol class="list-decimal pl-6">
+            <li>Add the required book in to Cart and click checkout</li>
+            <li>Fill the required contact information and place your order.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="border-b">
+        <button class="w-full text-left p-4 bg-zinc-100 white:bg-zinc-800 flex justify-between items-center"
+          onclick="toggleAnswer('answer2')">
+          <span>Do i need an account to purchase books?</span>
+          <span id="icon2">+</span>
+        </button>
+        <div id="answer2" class="hidden p-4 bg-white dark:bg-zinc-900 text-left">
+          <ol class="list-decimal pl-6">
+            <li>Yes. We create orders, delivery and all the contact details via your account on Viyath Books. All the
+              information on your account are private and not visible to any other party.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="border-b">
+        <button class="w-full text-left p-4 bg-zinc-100 white:bg-zinc-800 flex justify-between items-center"
+          onclick="toggleAnswer('answer3')">
+          <span>How to know my order is success?</span>
+          <span id="icon3">+</span>
+        </button>
+        <div id="answer3" class="hidden p-4 bg-white dark:bg-zinc-900 text-left">
+          <ol class="list-decimal pl-6">
+            <li>We will send you an acknowledgement email on successful completion of an order on the site. This email
+              will detail the order that you have placed and will give you an order reference number.
+
+              We would advise you to keep this email safely as you will need your order reference number for any further
+              queries which you may have. Failure to provide us with an order reference number on request will result in
+              a delay with your inquiry.
+
+              Once your order has been accepted and dispatched to you we will send you a confirmation email.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="border-b">
+        <button class="w-full text-left p-4 bg-zinc-100 white:bg-zinc-800 flex justify-between items-center"
+          onclick="toggleAnswer('answer4')">
+          <span>I did not get the email from you. Why?</span>
+          <span id="icon4">+</span>
+        </button>
+        <div id="answer4" class="hidden p-4 bg-white dark:bg-zinc-900 text-left">
+          <ol class="list-decimal pl-6">
+            <li>Please check your inbox and Spam box for the email. Some times emails go to spam mails due to various
+              reasons and different email clients.
+              Contact us at anytime regarding your inquiries. 0704839017 / 077-4839017</li>
+          </ol>
+        </div>
+      </div>
+    </div> -->
+  </section>
+
+
+  <!-- footer section -->
+  <footer id="footer" class="bg-dark text-white pt-4 pb-4">
+    <div class="container">
+        <div class="row">
+            <!-- Logo -->
+            <div class="col-md-3 text-center">
+                <img src="image/book1.png" width="200"  alt="Online Bookstore Logo" class="img-fluid">
+                <h5>Book Treasury</h5>
+            </div>
+            <!-- Contact Information -->
+            <div class="col-md-3">
+                <h5>Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-geo-alt-fill"></i> Street 22, Colombo</li>
+                    <li><i class="bi bi-telephone-fill"></i> +94 112 8911901</li>
+                    <li><i class="bi bi-envelope-fill"></i> booktreasury@gmail.com</li>
+                </ul>
+            </div>
+            <!-- Social Media Links -->
+            <div class="col-md-3">
+                <h5>Follow Us</h5>
+                <a  class="text-white text-decoration-none me-2"><i class="bi bi-facebook"></i></a>
+                <a  class="text-white text-decoration-none me-2"><i class="bi bi-twitter"></i></a>
+                <a  class="text-white text-decoration-none me-2"><i class="bi bi-instagram"></i></a>
+                <a  class="text-white text-decoration-none me-2"><i class="bi bi-linkedin"></i></a>
+            </div>
+            <!-- Newsletter Subscription -->
+            <div class="col-md-3">
+                <h5>Newsletter</h5>
+                <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                <form>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" id="newsletterEmail" placeholder="Enter your email">
+                    </div>
+                    <button class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col text-center">
+                <p class="mb-0">© 2024 Book Treasury. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!--off-canvas for cart section -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="cartOffcanvasLabel">Your Cart</h5>
+      <button id="offcanvasClose" type="button" class="btn-close" data-bs-dismiss="offcanvas"
+        aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="card h-100">
+        <div class="card-body overflow-y-scroll h-100">
+          <ul class="list-group list-group-flush" id="cartList">
+            <!-- cart items load in here -->
+          </ul>
+        </div>
+
+        <div class="card-body">
+          <h6 class="offcanvas-title">
+            Total items : <span id="lblTotalItems">0</span>
+          </h6>
+          <h5 class="offcanvas-title">
+            Total Price : Rs.<span id="lblSubTotal">0</span>.00
+          </h5>
+          <button disabled id="checkOutBtn" data-bs-toggle="modal" data-bs-target="#paymentDetails" type="button"
+            class="btn btn-dark w-100 mt-2">
+            GO TO CHECKOUT
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal for payment details form -->
+  <div class="modal fade modal-lg" id="paymentDetails" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="paymentDetailsLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="paymentDetailsLabel">Place Order</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex justify-content-center">
+          <!-- payment form -->
+          <form id="paymentForm">
+
+            <div class="row">
+
+              <div class="col">
+
+                <h3 class="title">billing address</h3>
+
+                <div class="inputBox">
+                  <span>full name :</span>
+                  <input id="customerName" type="text" placeholder="Enter your">
+                </div>
+                <div class="inputBox">
+                  <span>Mobile number :</span>
+                  <input id="contactNumber" type="text" placeholder="Enter registered mobile number">
+                </div>
+                <div class="inputBox">
+                  <span>Address :</span>
+                  <input id="address1" type="text" placeholder="enter address line">
+                </div>
+                <div class="inputBox">
+                  <span>City :</span>
+                  <input id="address2" type="text" placeholder="enter city">
+                </div>
+
+                <div class="flex">
+                  <div class="inputBox">
+                    <span>District :</span>
+                    <input id="address3" type="text" placeholder="enter district">
+                  </div>
+                  <div class="inputBox">
+                    <span>Zip code :</span>
+                    <input id="address4" type="text" placeholder="enter zip code">
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col">
+                <h3 class="title">payment</h3>
+                <div class="inputBox">
+                  <label><img src="image/2.png" alt=""></label>
+                  <label><img src="image/3.png" alt=""></label>
+                  <label><img src="image/4.png" alt=""></label>
+                  <label><img src="image/5.png" alt=""></label>
+                  <label><img src="image/6.png" alt=""></label>
+                </div>
+                <div class="inputBox">
+                  <span>Card Holder Name:</span>
+                  <input type="text" placeholder="cardholder name">
+                </div>
+                <div class="inputBox">
+                  <span>Card Number :</span>
+                  <input type="text" placeholder="xxxx-xxxx-xxxx-xxxx">
+                </div>
+                
+                <div class="flex">
+                  <div class="inputBox">
+                    <span>Exp Year :</span>
+                    <input type="Number" placeholder="yyyy/mm">
+                  </div>
+                  <div class="inputBox">
+                    <span>CVV :</span>
+                    <input type="text" placeholder="###">
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button id="modalCloseBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button onclick="placeOrder();" type="button" class="btn btn-success">Place Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal for login form -->
+  <div class="modal fade modal-lg" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="loginModal_body" class="modal-body ">
+          <div class="container">
+            <h2 class="text-center">Login</h2>
+            <div class="forms">
+              <div class="form login">
+                <!-- login form -->
+                <form id="loginForm">
+                  <div class="input-field">
+                    <input id="loginMobileNumber" type="text" name="Pnumber" placeholder="Mobile" required>
+                  </div>
+                  <div class="input-field">
+                    <input id="loginPassword" type="password" class="password" name="pword" placeholder="Password" required>
+                  </div>
+
+                  <div class="checkbox-text">
+                    <div class="checkbox-content">
+                      <input type="checkbox" id="logCheck">
+                      <label for="logCheck" class="text">Remember me</label>
+                    </div>
+
+                    <a class="text">Forgot password?</a>
+                  </div>
+
+                  <div class="input-field button">
+                    <input type="submit" value="Login">
+                  </div>
+                </form>
+
+                <div class="login-signup">
+                  <span class="text">Not a member?
+                    <a href="register.html" target="_blank" class="text signup-link">Signup Now</a>
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script>
+    const baseUrl = "http://localhost:8081/booktreasury";//base url to connect with backend
+    let books = [];//books array.
+    let cart = [];//cart array. cart objects add to here
+  </script>
+  <script src="js/routes/bookRoute.js"></script>
+  <script src="js/controller/bookController.js"></script>
+  <script src="js/controller/cartController.js"></script>
+  <script src="js/routes/orderRoute.js"></script>
+  <script src="js/controller/orderController.js"></script>
+  <script src="js/controller/userController.js"></script>
+
+
+</body>
+
+</html>
